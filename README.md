@@ -1,4 +1,4 @@
-# Gold Statistical 0Research
+# Gold Statistical Research
 A repository for researching on gold, calculating statistics and testing methods to exploit favorable probabilities in the market. Is it actually possible to find situations with a favorable probability that can be used for profit, or is this not the way to beating the market, through statistical and some technical analysis plus backtesting this will be investigated.   
 
 Several possibilities will be studied and will be listed below.
@@ -24,3 +24,16 @@ self.data['pct_change'] = ((Close - Open) / Open) * 100
 # Add volume percentiles for confirmation
 # Clean and structure data for analysis
 ```
+
+### 3. Momentum Persistence Analysis ([`analyze_momentum_persistence()`](./xauusd_analyzer.py#L81))
+ * Tests multiple threshold levels: 1.0%, 1.5%, 2.0%, 2.5%, 3.0%, 3.5%, 4.0%, to see which one can give us the quickest entry into a intraday movement.
+ * Analyzes lookforward periods: 6H, 12H, 24H, 48H
+ * Calculates win rates, average returns, and risk metrics
+ * Separates bullish and bearish signals
+
+### 4. Signal Analysis (['analyze_signal_group()'](./xauusd_analyzer.py#L118))
+
+ * Win Rate: Percentage of trades that moved in expected direction
+ * Average Return: Mean percentage move over the timeframe
+ * Maximum Adverse Excursion: Worst drawdown before reaching target
+ * Signal Frequency: How often these setups occur

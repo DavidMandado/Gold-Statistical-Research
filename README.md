@@ -7,7 +7,7 @@ Several possibilities will be studied and will be listed below.
 1. [Can we identify the minimum percentage move in a 4-hour/1-hour/etc. candle that provides > 75% probability of continued movement for 24+ hours?](##exploiting-the-probability-of-a-minimum-%-move-hourly-to-continue-for-24+-hours.)
 
 # Research development
-## Exploiting the probability of a minimum % move hourly to continue for 24+ hours.
+## 1. Minimum % move for a 24h+ continued movement.
 
 ### 1. Data Collection ([`download_data()`](./xauusd_analyzer.py#L16) / [`load_csv_data()`](./xauusd_analyzer.py#L40))
  * Downloads XAUUSD 4-hour data from Yahoo Finance (Gold Futures: GC=F)

@@ -145,21 +145,26 @@ class XAUUSDMomentumAnalyzer:
                 if current_pos + periods_ahead >= len(self.data):
                     continue
                     
-                # Get future prices
-                current_close = self.data.iloc[current_pos]['Close']
-                future_prices = self.data.iloc[current_pos:current_pos + periods_ahead + 1]['Close']
+                # Get current and future prices
+                current_close = float(self.data.iloc[current_pos]['Close'])
+                
+                # Get future price range
+                future_data = self.data.iloc[current_pos + 1:current_pos + periods_ahead + 1]
+                if len(future_data) == 0:
+                    continue
+                    
+                future_close = float(future_data['Close'].iloc[-1])
                 
                 # Calculate the move over the lookforward period
-                future_close = future_prices.iloc[-1]
                 total_return = ((future_close - current_close) / current_close) * 100
                 
                 # Calculate maximum adverse excursion
                 if direction == 'bullish':
-                    max_adverse = ((future_prices.min() - current_close) / current_close) * 100
-                    success = total_return > 0
+                    max_adverse = ((float(future_data['Close'].min()) - current_close) / current_close) * 100
+                    success = bool(total_return > 0)
                 else:
-                    max_adverse = ((future_prices.max() - current_close) / current_close) * 100
-                    success = total_return < 0
+                    max_adverse = ((float(future_data['Close'].max()) - current_close) / current_close) * 100
+                    success = bool(total_return < 0)
                     total_return = -total_return  # Make positive for easier analysis
                 
                 returns.append(total_return)

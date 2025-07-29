@@ -3,9 +3,9 @@ A repository for researching on gold, calculating statistics and testing methods
 
 Several possibilities will be studied and will me listed below.
 
-# [Research Questions](##1. Can we identify the minimum percentage move in a 4-hour/1-hour/etc. candle that provides >= 75%+ probability of continued movement for 24+ hours?)
+# [Research Questions](## 1. Exploiting the probability of a minimum % move hourly to continue for 24+ hours.)
 ### These are the subjects that will be studied in this repository.
 1. Can we identify the minimum percentage move in a 4-hour/1-hour/etc. candle that provides >= 75%+ probability of continued movement for 24+ hours?
 
 # Content
-## 1. Can we identify the minimum percentage move in a 4-hour/1-hour/etc. candle that provides >= 75%+ probability of continued movement for 24+ hours?
+## 1. Exploiting the probability of a minimum % move hourly to continue for 24+ hours.

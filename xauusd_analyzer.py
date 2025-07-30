@@ -358,7 +358,7 @@ if __name__ == "__main__":
     
     # Find optimal thresholds
     print("\nFinding optimal combinations...")
-    optimal = analyzer.find_optimal_thresholds(min_win_rate=75, min_signals=15)
+    optimal = analyzer.find_optimal_thresholds(min_win_rate=75, min_signals=10)
     
     # Analyze by trading session
     print("\nAnalyzing by trading session...")

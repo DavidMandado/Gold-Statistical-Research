@@ -37,3 +37,70 @@ self.data['pct_change'] = ((Close - Open) / Open) * 100
  * Average Return: Mean percentage move over the timeframe
  * Maximum Adverse Excursion: Worst drawdown before reaching target
  * Signal Frequency: How often these setups occur
+
+### 5. Trading Session & Contextual Analysis
+
+ * Compares momentum signal performance across London, New York, and Asian trading sessions
+ * Analyzes volume confirmation using percentile ranks
+ * Highlights which sessions produce more reliable continuation signals
+ * Includes risk-reward visualizations by session
+
+### 6. Key Findings
+
+#### High-Probability Setups (Rare but Reliable)
+| Threshold | Timeframe | Direction | Win Rate | Avg Return | Signal Count |
+|-----------|-----------|-----------|----------|------------|---------------|
+| 2.0%      | 24H       | Bullish   | 100%     | 0.84%      | 2             |
+| 2.0%      | 12H       | Bullish   | 100%     | 0.64%      | 2             |
+| 2.5%      | 12H       | Bearish   | 100%     | 0.82%      | 2             |
+
+#### Tradeable Frequency Setups (Moderate Risk-Reward)
+| Threshold | Timeframe | Direction | Win Rate | Avg Return | Signal Count |
+|-----------|-----------|-----------|----------|------------|---------------|
+| 1.5%      | 24H       | Bullish   | 81.8%    | 0.28%      | 11            |
+| 1.0%      | 24H       | Bullish   | 64.4%    | 0.07%      | 45            |
+
+### 7. Visual Insights
+
+ * **Win Rate Heatmap**: Highlights 80%+ win-rate zones around 2.0% thresholds
+ * **Signal Frequency Chart**: Shows inverse relationship between frequency and accuracy
+ * **Risk vs Return Bubbles**: Visualizes optimal zones for threshold selection
+ * **Average Return Distribution**: Confirms best risk-adjusted returns at 2.0% over 24H
+
+### 8. Statistical Conclusions
+
+ * **Momentum Persistence Exists**: ≥2.0% moves often persist over 24 hours
+ * **Accuracy vs Frequency Trade-off**: 1.5% is a sweet spot between signal reliability and frequency
+ * **Risk Metrics**: Max adverse excursion generally <1%; 24H holds outperform shorter durations
+
+### 9. Limitations
+
+ * Limited to 2 years of data; higher thresholds have few samples
+ * Does not include macroeconomic event filters or volatility regime awareness
+ * No execution slippage, spread, or fee simulation in initial backtest
+
+### 10. Next Steps
+
+#### Phase 1: Enhanced Data Analysis
+ * Use full Kaggle dataset (2004–2025)
+ * Test momentum persistence across economic cycles
+
+#### Phase 2: Strategy Refinement
+ * Add volume filters, multi-timeframe confluence, DXY correlation
+ * Integrate economic calendar to avoid high-impact news events
+
+#### Phase 3: Practical Implementation
+ * Validate with paper trading for 1–2 months
+ * Add stop-loss, position sizing logic for €50 capital
+ * Test realistic performance including slippage and fees
+
+#### Phase 4: Live Trading Prep
+ * MT4/MT5 signal integration
+ * Alert system + dashboard
+ * Gradual capital scaling based on results
+
+### 11. How to Run
+
+```bash
+pip install pandas numpy matplotlib seaborn yfinance scipy
+python xauusd_analyzer.py

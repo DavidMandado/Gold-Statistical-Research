@@ -191,7 +191,7 @@ class XAUUSDMomentumAnalyzer:
             'avg_time_to_target': hours  # Simplified for now
         }
         
-    def find_optimal_thresholds(self, min_win_rate=80, min_signals=20):
+    def find_optimal_thresholds(self, min_win_rate=80, min_signals=15):
         """Find thresholds that meet minimum criteria"""
         if self.results is None or len(self.results) == 0:
             print("No results available. Run analyze_momentum_persistence() first.")

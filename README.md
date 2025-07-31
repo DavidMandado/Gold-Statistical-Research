@@ -62,6 +62,30 @@ self.data['pct_change'] = ((Close - Open) / Open) * 100
 
 ### 7. Visual Insights
 
+<div align="center">
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="assets/plots/win_rate_heatmap.png" alt="Win Rate Heatmap" width="400"/>
+    </td>
+    <td align="center">
+      <img src="assets/plots/signal_frequency.png" alt="Signal Frequency" width="400"/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="assets/plots/risk_vs_return_bubble.png" alt="Risk vs Reward Bubble Chart" width="400"/>
+    </td>
+    <td align="center">
+      <img src="assets/plots/return_distribution.png" alt="Return Distribution" width="400"/>
+    </td>
+  </tr>
+</table>
+
+</div>
+
+
  * **Win Rate Heatmap**: Highlights 80%+ win-rate zones around 2.0% thresholds
  * **Signal Frequency Chart**: Shows inverse relationship between frequency and accuracy
  * **Risk vs Return Bubbles**: Visualizes optimal zones for threshold selection
@@ -101,6 +125,7 @@ self.data['pct_change'] = ((Close - Open) / Open) * 100
 
 ### 11. How to Run
 
-```bash
+```ruby
 pip install pandas numpy matplotlib seaborn yfinance scipy
 python xauusd_analyzer.py
+```

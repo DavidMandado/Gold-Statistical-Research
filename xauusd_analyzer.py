@@ -39,14 +39,24 @@ class XAUUSDMomentumAnalyzer:
             
     def load_csv_data(self, filepath):
         """
-        Load data from CSV file
-        Expected columns: DateTime, Open, High, Low, Close, Volume
+        Load and clean CSV/TSV data with datetime in 'YYYY.MM.DD HH:MM' format.
         """
-        df = pd.read_csv(filepath)
-        
-        if 'Date' in df.columns and  'Time' not in df.columns:
-            df['DateTime'] = pd.to_datetime(df['Date']) # if it already includes time
-        elif 'Date' in df.columns and 'Time' in df.columns:
+        print("Loading and parsing CSV...")
+
+        # Load with proper separator (tab or auto-detect whitespace)
+        df = pd.read_csv(filepath, sep=r'\s+|\t+', engine='python')
+
+        # Parse the date column
+        df['DateTime'] = pd.to_datetime(df['Date'], format='%Y.%m.%d %H:%M')
+
+        # Set index and clean
+        df = df.set_index('DateTime')
+        df = df[['Open', 'High', 'Low', 'Close', 'Volume']].apply(pd.to_numeric, errors='coerce')
+        df = df.dropna()
+
+        self.data = df
+        print(f"✅ Loaded {len(df)} candles from: {filepath}")
+        self.prepare_data()
         
     def prepare_data(self):
         """Prepare data for analysis"""

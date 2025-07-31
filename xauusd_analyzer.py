@@ -40,6 +40,8 @@ class XAUUSDMomentumAnalyzer:
     def load_csv_data(self, filepath):
         """
         Load and clean CSV/TSV data with datetime in 'YYYY.MM.DD HH:MM' format.
+        WARNING: This function was developed to handle the kaggle gold dataset linked in the README, as it has date and 
+        time in a same column, other datasets might need adjusting of this function.
         """
         print("Loading and parsing CSV...")
 

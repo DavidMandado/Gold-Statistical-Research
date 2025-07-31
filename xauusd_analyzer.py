@@ -361,7 +361,7 @@ class XAUUSDMomentumAnalyzer:
         else:
             print("No combinations meet this criteria. Consider lowering thresholds.")
 
-filepath = "
+filepath = "data/XAU_4h_data.csv"
 
 # This is the main execution block - runs when you execute this file directly
 if __name__ == "__main__":

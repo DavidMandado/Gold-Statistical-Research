@@ -46,18 +46,24 @@ class XAUUSDMomentumAnalyzer:
         print("Loading and parsing CSV...")
 
         # Load with proper separator (tab or auto-detect whitespace)
-        df = pd.read_csv(filepath, sep=r'\s+|\t+', engine='python')
+        df = pd.read_csv(filepath, sep=r';', engine='python')
+        
+        df.columns = ['DateTime', 'Open', 'High', 'Low', 'Close', 'Volume']
 
-        # Parse the date column
-        df['DateTime'] = pd.to_datetime(df['Date'], format='%Y.%m.%d %H:%M')
+        # Parse datetime column
+        df['DateTime'] = pd.to_datetime(df['DateTime'], format='%Y.%m.%d %H:%M')
 
-        # Set index and clean
+        # Set datetime as index
         df = df.set_index('DateTime')
-        df = df[['Open', 'High', 'Low', 'Close', 'Volume']].apply(pd.to_numeric, errors='coerce')
+
+        # Ensure numeric values
+        df[['Open', 'High', 'Low', 'Close', 'Volume']] = df[['Open', 'High', 'Low', 'Close', 'Volume']].apply(pd.to_numeric, errors='coerce')
+
+        # Drop any bad rows
         df = df.dropna()
 
         self.data = df
-        print(f"✅ Loaded {len(df)} candles from: {filepath}")
+        print(f"✅ Loaded {len(df)} rows from colon-separated file.")
         self.prepare_data()
         
     def prepare_data(self):

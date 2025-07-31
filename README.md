@@ -200,6 +200,12 @@ These are **moderate-frequency, high-reliability trades**. They offer a good bal
 
 </div>
 
+### Differences from first phase plots
+
+- We find way more above 50 win rate situations, which suggests the phase one testing was biased, we now do not go over 80% win rate, which is still an incredible positive probability in our favor.
+- The distribution of signal frequency remains with the same distribution, the most secure trades occur rarely along the years, although we do see a very big amount of trades with ~20% return with moderate amount of signals. 
+- Risk vs. reward dot plot shows an interesting set up of an average 20% return with 60% win rate. Very good statistics to trade long-term and with growing balance.
+
 ---
 
 ### 🕒 Session-Based Performance (24H Signals)

@@ -361,6 +361,7 @@ class XAUUSDMomentumAnalyzer:
         else:
             print("No combinations meet this criteria. Consider lowering thresholds.")
 
+filepath = "
 
 # This is the main execution block - runs when you execute this file directly
 if __name__ == "__main__":
@@ -369,8 +370,8 @@ if __name__ == "__main__":
     # Initialize analyzer
     analyzer = XAUUSDMomentumAnalyzer()
     
-    # Download data (you can also use analyzer.load_csv_data('your_file.csv'))
-    analyzer.download_data(period="2y", interval="4h")
+    # Download data (you can use analyzer.load_csv_data('filepath of your file') or analyzer.download_data(period='2y', interval="4h"))
+    analyzer.load_csv_data(filepath)
     
     # Run main analysis
     print("\nRunning momentum persistence analysis...")

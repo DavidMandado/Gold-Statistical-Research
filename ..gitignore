@@ -1,0 +1,72 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.pyo
+*.pyd
+*.manifest
+*.spec
+
+# === Jupyter Notebooks Checkpoints ===
+.ipynb_checkpoints/
+
+# === Virtual Environment ===
+env/
+venv/
+ENV/
+.venv/
+.ENV/
+
+# === IDEs ===
+.vscode/
+.idea/
+
+# === OS Files ===
+.DS_Store
+Thumbs.db
+
+# === Logs and Debug ===
+*.log
+*.out
+
+# === Data Files ===
+*.csv
+*.tsv
+*.parquet
+*.feather
+*.h5
+*.hdf5
+*.xlsx
+*.xls
+*.pkl
+*.joblib
+
+# === Notebooks Outputs (optional) ===
+**/.ipynb_checkpoints/
+**/*_checkpoint.ipynb
+
+# === Secrets ===
+.env
+*.env
+.env.*
+
+# === Tests ===
+.pytest_cache/
+.tox/
+.coverage
+htmlcov/
+coverage.xml
+
+# === Misc ===
+*.bak
+*.swp
+*.tmp
+*.~*
+
+# === Gitignore Itself ===
+!.gitignore
